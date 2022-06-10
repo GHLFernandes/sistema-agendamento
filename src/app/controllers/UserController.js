@@ -25,7 +25,9 @@ class UserController {
         });
     }
 
-
+    async update(req, res) {
+        return await res.json({ message: true })
+    }
 }
 
 export default new UserController();

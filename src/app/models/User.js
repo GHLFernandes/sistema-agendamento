@@ -2,7 +2,12 @@ import { Sequelize, Model, DataTypes } from 'sequelize';
 import sequelize from '../../config/config';
 import bcrypt from 'bcryptjs';
 
-class User extends Model {}
+class User extends Model {
+    checkPassword = async(password) => {
+        return bcrypt.compare(password, this.password_hash);
+    }
+}
+
 User.init({
     name: Sequelize.STRING,
     email: Sequelize.STRING,
@@ -19,13 +24,14 @@ User.addHook('beforeSave', async(user) => {
         user.password_hash = bcrypt.hashSync(user.password, salt)
     }
 
-    return user;
+    return this;
 });
+
+
 
 (async() => {
     await sequelize.sync();
 
 })();
-
 
 export default User;
