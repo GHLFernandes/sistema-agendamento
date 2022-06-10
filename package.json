@@ -19,7 +19,8 @@
         "pg-hstore": "^2.3.4",
         "postgresql-client": "^2.0.3",
         "sequelize": "^6.20.1",
-        "sqlite3": "^5.0.8"
+        "sqlite3": "^5.0.8",
+        "yup": "^0.32.11"
     },
     "devDependencies": {
         "sequelize-cli": "^6.4.1",
