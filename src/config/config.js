@@ -1,18 +1,59 @@
-import { Sequelize } from 'sequelize';
+module.exports = {
+    development: {
+        dialect: 'postgres',
+        host: 'localhost',
+        port: 5432,
+        username: 'postgres',
+        password: 'docker',
+        database: 'sistema',
+        define: {
+            timestamps: true,
+            underscored: true,
+            underscoredAll: true,
+            createdAt: 'created_at',
+            updatedAt: 'updated_at',
+            deletedAt: 'deleted_at',
 
-module.exports = new Sequelize('sistema', 'postgres', 'docker', {
-    dialect: 'postgres',
-    host: 'localhost',
-    username: 'postgres',
-    password: 'docker',
-    database: 'sistema',
-    define: {
-        timestamps: true,
-        underscored: true,
-        underscoredAll: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: 'deleted_at',
+        },
+        dialectOptions: {
+            bigNumberStrings: true
+        }
+    },
+    test: {
+        dialect: 'postgres',
+        host: 'localhost',
+        port: 5432,
+        username: 'postgres',
+        password: 'docker',
+        database: 'sistema',
+        define: {
+            timestamps: true,
+            underscored: true,
+            underscoredAll: true,
+            createdAt: 'created_at',
+            updatedAt: 'updated_at',
+            deletedAt: 'deleted_at',
 
+        },
+        dialectOptions: {
+            bigNumberStrings: true
+        }
+    },
+    production: {
+        dialect: 'postgres',
+        host: 'localhost',
+        port: 5432,
+        username: 'postgres',
+        password: 'docker',
+        database: 'sistema',
+        define: {
+            timestamps: true,
+            underscored: true,
+            underscoredAll: true,
+            createdAt: 'created_at',
+            updatedAt: 'updated_at',
+            deletedAt: 'deleted_at',
+
+        },
     }
-});
+};

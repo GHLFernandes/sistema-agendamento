@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-module.exports = new Sequelize('sistema', 'postgres', 'docker', {
+export default new Sequelize('sistema', 'postgres', 'docker', {
     dialect: 'postgres',
     host: 'localhost',
     username: 'postgres',
